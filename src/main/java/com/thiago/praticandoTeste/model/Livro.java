@@ -3,6 +3,7 @@ package com.thiago.praticandoTeste.model;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,6 +30,6 @@ public class Livro {
     private LocalDate data_publicacao;
 
     @JoinColumn(name = "idAutor")
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Autor autor;
 }
